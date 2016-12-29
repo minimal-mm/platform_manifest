@@ -1,10 +1,10 @@
-Minimal OS
+Minimal OS Fork
 ===========
 Minimal and Snappy 
 
 Getting Started
 ---------------
-To get started with the Minimal sources, you'll need to get
+To get started with the sources, you'll need to get
 familiar with [Git and Repo](http://source.android.com/source/version-control.html).
 
 
@@ -39,10 +39,21 @@ For initializing repo use:
 
     repo init -u https://github.com/MinimalOS-AOSP/platform_manifest.git -b mr1
 
-
 sync repo:
 
     repo sync -j$(# of CPUs x2)
+
+setup environment:
+
+    source build/envsetup.sh
+
+choose right target:
+
+    lunch
+    
+run build:
+
+    make otapackage -j4
 
 Happy Compiling!
 ===========
