@@ -13,18 +13,22 @@
   <remote  name="mo"
            revision="mr1"
            fetch="https://github.com/MinimalOS-AOSP/" />
+  
+  <remote  name="minimal-mm"
+           revision="mr1"
+           fetch="https://github.com/minimal-mm/" />
            
   <remote  name="github"
            fetch="https://github.com/" />
   <remote name="bb"
            fetch="https://bitbucket.org/" />         
 
-  <project path="build" name="platform_build" remote="mo" groups="pdk" >
+  <project path="build" name="minimalos_platform_build" remote="minimal-mm" groups="pdk" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="abi/cpp" name="platform/abi/cpp" groups="pdk" />
   <project path="art" name="platform_art" groups="pdk" remote="mo" />
-  <project path="bionic" name="platform_bionic" remote="mo" groups="pdk" />
+  <project path="bionic" name="platform_bionic" remote="minimal-mm" groups="pdk" />
   <project path="bootable/recovery" name="platform/bootable/recovery" groups="pdk" />
   <project path="cts" name="platform/cts" groups="cts,pdk-cw-fs,pdk-fs" />
   <project path="dalvik" name="platform_dalvik" remote="mo" groups="pdk-cw-fs,pdk-fs" />
@@ -344,7 +348,9 @@
   <project path="packages/apps/ContactsCommon" name="platform_packages_apps_ContactsCommon" groups="pdk-fs" remote="mo" />
   <project path="packages/apps/DeskClock" name="platform_packages_apps_DeskClock" groups="pdk-fs" remote="mo" />
   <project path="packages/apps/Dialer" name="platform_packages_apps_Dialer" groups="pdk-fs" remote="mo" />
+  <project path="packages/apps/Email" name="platform/packages/apps/Email" groups="pdk-fs" />
   <project path="packages/apps/ExactCalculator" name="platform/packages/apps/ExactCalculator" groups="pdk-fs" />
+  <project path="packages/apps/Exchange" name="platform/packages/apps/Exchange" groups="pdk-fs" />
   <project path="packages/apps/Gallery2" name="platform_packages_apps_Gallery2" groups="pdk-fs" remote="mo" />
   <project path="packages/apps/HTMLViewer" name="platform/packages/apps/HTMLViewer" groups="pdk-fs" />
   <project path="packages/apps/InCallUI" name="platform_packages_apps_InCallUI" groups="pdk-fs" remote="mo" />
@@ -360,6 +366,7 @@
   <project path="packages/apps/Provision" name="platform/packages/apps/Provision" groups="pdk-fs" />
   <project path="packages/apps/Settings" name="platform_packages_apps_Settings" groups="pdk-fs" remote="mo" />
   <project path="packages/apps/SmartCardService" name="platform/packages/apps/SmartCardService" groups="pdk-fs" />
+  <project path="packages/apps/SMSSecure" name="android_packages_apps_SMSSecure" remote="minimal-mm" revision="aosp-7.1" />
   <project path="packages/apps/SoundRecorder" name="platform/packages/apps/SoundRecorder" groups="pdk-fs" />
   <project path="packages/apps/SpareParts" name="platform/packages/apps/SpareParts" groups="pdk-fs" />
   <project path="packages/apps/SpeechRecorder" name="platform/packages/apps/SpeechRecorder" groups="pdk-fs" />
